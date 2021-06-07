@@ -58,11 +58,11 @@ class Entry:
 
 
 @click.command()
-@click.argument('name', default=None, required=False)
+@click.argument('name', default=None, required=False, help='Name of service')
 @click.option('--config',
               '-c',
-              default=os.path.expanduser('~/.config/passman.toml'))
-@click.option('--new','-n', is_flag=True)
+              default=os.path.expanduser('~/.config/passman.toml'),help="Path to a config file.")
+@click.option('--new','-n', is_flag=True,help="Add a new service")
 def app(name, config, new):
     #Read Config file
     settings = toml.load(config)
