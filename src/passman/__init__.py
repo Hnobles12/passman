@@ -54,7 +54,7 @@ class Entry:
         return secrets.token_urlsafe(length)
 
     def __str__(self):
-        return f'{Style.DIM}Service:{Style.NORMAL} {self.name}\n{Style.DIM}{Style.BOLD}Username:{Style.NORMAL} {self.username}\n{Style.DIM}URL:{Style.NORMAL} {self.url}\n{Style.DIM}Password:{Style.NORMAL} {Fore.RED}{self.password}{Style.RESET_ALL}'
+        return f'{Style.DIM}Service:{Style.NORMAL} {self.name}\n{Style.DIM}Username:{Style.NORMAL} {self.username}\n{Style.DIM}URL:{Style.NORMAL} {self.url}\n{Style.DIM}Password:{Style.NORMAL} {Fore.RED}{self.password}{Style.RESET_ALL}'
 
 
 @click.command()
@@ -76,7 +76,7 @@ def app(name, config, new):
 
 
     #Init db
-    db = init_db(settings['data_path']+'/data.db')
+    db = init_db(settings['data_path']+'/passman_data.db')
 
     #Add entry:
     if new:
