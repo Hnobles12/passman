@@ -9,7 +9,7 @@ Clone the repository with:
 git clone https://github.com/Hnobles12/passman.git
 
 ```
-Enter the src/ directory and install:
+Enter the repo and install:
 ```bash
 cd passman
 sudo pip3 install ./src
