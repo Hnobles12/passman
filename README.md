@@ -11,7 +11,12 @@ git clone https://github.com/Hnobles12/passman.git
 ```
 Enter the src/ directory and install:
 ```bash
-cd passman/src && sudo pip3 install .
+cd passman
+sudo pip3 install ./src
+```
+Copy the default config file:
+```bash
+cp ./doc/example.toml ~/.config/passman.toml
 ```
 
 ## Usage:
