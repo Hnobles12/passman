@@ -1,7 +1,9 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
+import os
+
 from cryptography.fernet import Fernet
-from tinydb import TinyDB, Query
+from tinydb import Query, TinyDB
 
 
 def load_from_key(fname: str) -> Fernet:
@@ -26,5 +28,9 @@ def gen_key_file(fname: str):
 
 
 def init_db(fname: str) -> TinyDB:
+    if not os.path.exists(fname):
+        with open(fname, 'w+') as f:
+            f.write('')
+            f.close()
     db: TinyDB = TinyDB(fname)
     return db
